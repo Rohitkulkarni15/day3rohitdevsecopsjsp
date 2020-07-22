@@ -1,0 +1,17 @@
+---
+ - hosts: tomcat
+   remote_user: root
+   tasks:
+    - name: install docker if not install
+      yum:
+       name: docker
+       state: present
+     - name: starting docker service
+       service:
+        name: docker
+        state: started
+        enabled: yes
+     - name: copy war file to target machine
+        copy:
+        src: target/
+        dest: /opt/
