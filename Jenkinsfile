@@ -14,7 +14,7 @@ stages {
        }
         stage('security checking by trufflehog'){
                 steps{
-                        sh 'docker run --rm rohit:secvm1'
+                        sh 'docker run --rm ashu:secv1'
                 }
         }
        stage('build java project'){
