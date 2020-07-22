@@ -12,6 +12,11 @@ stages {
                    sh 'mvn -v'
                 }
        }
+        stage('security checking by trufflehog'){
+                steps{
+                        sh 'docker run --rm rohit:secvm1'
+                }
+        }
        stage('build java project'){
           steps {
                    sh 'mvn clean package'
