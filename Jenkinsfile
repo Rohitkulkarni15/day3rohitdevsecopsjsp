@@ -14,7 +14,9 @@ stages {
        }
         stage('security checking by trufflehog'){
                 steps{
-                        sh 'docker run --rm ashu:secv1'
+                        sh 'docker run  --rm  gesellix/trufflehog --json  https://github.com/Rohitkulkarni15/day3rohitdevsecopsjsp.git  >mybugs.txt'
+			sh 'cat mybugs.txt'
+
                 }
         }
        stage('build java project'){
