@@ -33,6 +33,16 @@ stages {
                    sh 'mvn clean package'
                 }
        }
+	stage('connecting to ansible'){
+		steps {
+			sh 'ansible tomcat -u root -m ping'
+		
+		}
+	
+	
+	}
+	
+	
 
 
 }
